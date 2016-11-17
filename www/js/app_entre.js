@@ -1,8 +1,10 @@
-$( init );
 var elem1 = 0;
 var elem2 = 0;
 var elem3 = 0;
-function init(elem1, elem2, elem3) {
+var Count = 0;
+var max = 0;
+$( init );
+function init() {
     $('.drag').draggable({
         containment: '.container',
         snap: false,
@@ -14,28 +16,34 @@ function init(elem1, elem2, elem3) {
             return !event;
         },
   });
+
+  // drop unique par choix pour spécifier le nombre de contenu
     $('.drop').droppable( {
-        drop: function(event, ui) {
+        drop: function(event, ui){
+        $( "img" ).remove("#" + ui.draggable.attr('id') );
         handleDropEvent(event, ui);
-        var $this = $(this);
-        ui.draggable.position({
-        my: "center",
-        at: "center",
-        of: $this,
-       using: function(pos) {
-        $(this).animate(pos, 200, "linear");
-       }
+        //var $this = $(this);
+        //ui.draggable.position({
+        //my: "center",
+        //at: "center",
+        //of: $this,
+       //using: function(pos) {
+       // $(this).animate(pos, 200, "linear");  
+        }
     });
   }
-});
-}
+//});
+//}
+
+
+// Afficher le prévisionnage 
 function handleDropEvent( event, ui ) {
   var draggable = ui.draggable;
   if ( elem1 == 0){
       idx = 6;
       elem1 = 1;
       while (idx > 0){
-      $('.content_'+ idx ).prepend('<img id="theImg" src="../img/img_beta_app/'+ draggable.attr('id') +'.png" />');
+      $('.content_'+ idx ).prepend('<img class="rotate" src="../img/app_img/no_pique/plat/'+ draggable.attr('id') +'.png" />');
         idx--;  
         }
     }else if (elem1 == 1 && elem2 == 0){
@@ -43,7 +51,7 @@ function handleDropEvent( event, ui ) {
         idx = 5;
         while (idx > 1){
             $('.content_' + idx ).empty(); 
-            $('.content_' + idx ).prepend('<img id="theImg" src="../img/img_beta_app/'+ draggable.attr('id') +'.png" />');
+            $('.content_' + idx ).prepend('<img class="rotate135" src="../img/app_img/no_pique/plat/'+ draggable.attr('id') +'.png" />');
             idx = idx - 3;
         }
     }else if (elem1 == 1 && elem2 == 1){
@@ -51,24 +59,26 @@ function handleDropEvent( event, ui ) {
         idx = 4;
         while (idx > 0){
             $('.content_' + idx ).empty(); 
-            $('.content_' + idx ).prepend('<img id="theImg" src="../img/img_beta_app/'+ draggable.attr('id') +'.png" />');
+            $('.content_' + idx ).prepend('<img class="rotate45" src="../img/app_img/no_pique/plat/'+ draggable.attr('id') +'.png" />');
             idx = idx - 3;
         }
     }
 }
 
-function ClearPrev(){
-    var idx = idx = 6;
+function Clearall(){
+   // delete de la prev
+    var idx = 6;
     while (idx > 0){
          $('.content_' + idx ).empty(); 
         idx--;
     }
-}
-
-function ClearChoice(){
-    $('choice_1').empty();  
-    $('choice_2').empty();  
-    $('choice_3').empty();  
+    //reset de id=menu-app
+    elem1 = 0;
+    elem2 = 0;
+    elem3 = 0;
+    $( "#menu-app" ).empty(); 
+    $( "#menu-app" ).load( "../html/beta_app.html #menu-content" ); // réintergation des images après supr
+    setTimeout(function(){ $( init ); }, 1000);
 }
 
 /*
