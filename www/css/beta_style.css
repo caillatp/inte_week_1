@@ -25,9 +25,6 @@
 }
 
 
-img{
-    z-index: 9999;
-}
 
 
 body{
@@ -73,7 +70,7 @@ transform: rotate(45deg);
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
 .rotate{
@@ -124,6 +121,7 @@ img{
 
 .drag{
     margin-left: 20px;
+    z-index: 9999;
 }
 
 #plaque{
@@ -146,7 +144,7 @@ img{
 .prev-app{
     overflow: hidden;
     width: 80%;
-    height: 100px;
+    height: 122,2px;
     border: solid black;
     display: inline-block;
     margin-top:2%;
