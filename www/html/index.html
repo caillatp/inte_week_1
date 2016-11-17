@@ -2,23 +2,159 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<title>Brochette</title>
+	<link rel="icon" type="image/png" href="../img/logotoque2.png">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/smoothscroll.js"></script>
+
 </head>
+
+
 <body>
 
-<header>
-	<nav><a class="Brochette" href="Brochette">Composer sa brochette</a>|<a href="Créations"> Les Créations</a>|<a href="contact"> Contact</a></nav>
-</header>
+	<header>
+		<nav class="nav">
+			<img class="logo" src="../img/skewerv2.png"></a>
+			<a href="#apropos" class="js-scrollTo">A propos</a>
+			<a href="#part2" class="js-scrollTo">Formules</a>
+			<a href="#contact" class="js-scrollTo">Contacts</a>
+			<a href="create_brochette" target="blank">A vos brochettes !</a>
+			<a class="log"><img src="../img/avatar.png"></a>
+			<a class="log-in-panier" href="#"><img src="../img/cart.png"></a>
+			<p class="log-in"><a class="align" href="index2.html" target="blank">Se connecter</a><a class="align" href="">S'inscrire</a></p>
+			
+		</nav>
 
+		<button class="c-hamburger c-hamburger--rot"><span></span></button>
+		<div class="menu">
+			<ul>			
+				<a class="log" href="index2.html" target="blank"><img src="../img/avatar.png"></a>
+				<a class="log-in-panier" href="#"><img src="../img/cart.png"></a>	
+				<li><a href="#apropos" class="js-scrollTo">A propos</a></li>
+				<li><a href="#part2" class="js-scrollTo">Les Créations</a></li>
+				<li><a href="#contact" class="js-scrollTo">Contacts</a></li>
+				<li><a class="style-brochette" href="create_brochette" target="blank">A vos brochettes !</a></li>
+			</ul>
+		</div>
+		<div id="main"></div><a href="#apropos" class="js-scrollTo scroll"><img src="../img/arrow.png"></a>		
+	</header>
+	
+	<div class="fixbug"></div>
+	<main class="container">
+	<section id="apropos" class="row clearfix">
+		<article class="col left w1">
+			<h2>À Propos</h2>
+			<p class="text_propos">N’attendez plus l’été pour profiter des saveurs d’un barbecue. Pour vous permettre de varier vos grillades, nous vous proposons de créer les vôtres !</p>
+			<p class="text_propos">Après avoir mûrement réfléchi sur ce projet de création de brochettes, Gérome LACAUX, Pierre-Alexandre CAILLAT, Lucas LECOT, Alizé DIDARET et Alice BENEYTON ont lancé </p>
+			<p class="text_propos">La nouvelle enseigne joue la carte de la simplicité gourmande en proposant des formules uniques au rapport qualité-prix imbattable.</p>
+			<p><p class="text_broch1">Broch’</p><p class="text_broch2">it.</p></p>
+		</article>
+	</section>
+	<section id="part1"></section>
+	<section id="contact" class="row clearfix">
+		<article class="col left w3">
+			<figure class="picto">
+				<img class="picto" src="../img/telephone.png" alt="">
+			</figure>
+			<figcaption>
+				<h2>Telephone</h2>
+				<p>+33 (0)1.55.68.76.55</p>
+			</figcaption>
+		</article>
+		<article class="col left w3">
+			<figure class="picto">
+				<img src="../img/horloge.png" alt="">
+			</figure>
+			<figcaption>
+				<h2>Heures de livraison</h2>
+				<p>Pour le déjeuner : du mardi au dimanche, dès 12h.</p>
+				<p>Pour le dîner : du mardi au dimanche, dès 19h.</p>
+			</figcaption>
+		</article>
+		<article class="col left w3">
+			<figure class="picto">
+				<img src="../img/adresse.png" alt="">
+			</figure>
+			<figcaption>
+				<h2>Adresse</h2>
+				<p>Brosh'it</p>
+			</figcaption>
+		</article>
+	</section>
+</main>
+<footer class="foot">
+	<p>© Broch'It --- Contact email : Broch'It@broch.it --- 2016</p>
+</footer>
 
-
-
-
-
-
-
+	<div id="below-main"></div>
+	</main>
 
 </body>
+
+
+
+
+<script type="text/javascript">
+	(function() {
+
+		"use strict";
+
+		var toggles = document.querySelectorAll(".c-hamburger");
+
+		for (var i = toggles.length - 1; i >= 0; i--) {
+			var toggle = toggles[i];
+			toggleHandler(toggle);
+		};
+
+		function toggleHandler(toggle) {
+			toggle.addEventListener( "click", function(e) {
+				e.preventDefault();
+				(this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+			});
+		}
+
+	})();
+</script>
+
+<script type="text/javascript">
+var mainbottom = $('#main').offset().top + $('#main').height();
+
+// on scroll, 
+$(window).on('scroll',function(){
+
+    // we round here to reduce a little workload
+    var stop = Math.round($(window).scrollTop());
+
+    if (stop > mainbottom) {
+        $('.nav').addClass('past-main');
+    } else {
+        $('.nav').removeClass('past-main');
+    }
+
+});
+</script>
+
+</script>
+<script type="text/javascript">
+
+	$("ul").hide();
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("ul").toggle(600);
+		});
+	});
+</script>
+
+<script type="text/javascript">
+
+	$(".log-in").hide();
+	$(document).ready(function(){
+		$(".log").click(function(){
+			$(".log-in").toggle(600);
+		});
+	});
+</script>
 </html>
