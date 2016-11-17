@@ -70,6 +70,7 @@ function Clearall(){
     elem3 = 0;
     max = 0;
     $( "#menu-app" ).empty(); 
-    $( "#menu-app" ).load( local_file +" #menu-content" );
-    setTimeout(function(){ $( init ); }, 1000);
+    $( "#menu-app" ).load( local_file +" #menu-content", function(){ 
+        init();
+    });
 }

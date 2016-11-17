@@ -144,20 +144,26 @@ img{
 .prev-app{
     overflow: hidden;
     width: 80%;
-    height: 122,2px;
-    border: solid black;
-    display: inline-block;
+    zheight: 122,2px;
+    zborder: solid black;
+    /*display: inline-block*/
+    background: url(../img/broche3.png) center center no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
     margin-top:2%;
     margin-left: 10%;
 }
 .content_1, .content_2, .content_3, .content_4, .content_5, .content_6{
-    border: solid black;
-    width: 10%;
+    zborder: solid black;
+    width: 9%;
     height: 100px;
     float: left;
+    margin-left: 5px;
+    margin-bottom: 20px;
     
 }
 
 .rotate, .rotate45, .rotate135{
-    width: 85%;
+    width: 90%;
 }
