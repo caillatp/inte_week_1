@@ -41,6 +41,7 @@ p{
     width: 25%;
     padding: 20px;
     margin-left: 2.5%;
+    font-size: 23px;
 }
 
 #logo{
@@ -50,7 +51,6 @@ p{
     margin-top: 4%;
     margin-left: 4%;
     margin-bottom: 4%;
-    border: 2px solid grey;
 }
 .container{
     margin: auto;
@@ -82,19 +82,21 @@ transform: rotate(90deg);
 
 #reset{
     float: right;
-    margin-right: -50px; 
+    margin-top: 10px;
+    margin-right: -280px; 
     width: 15%;
 }
 
 #menu-app{
     float: right;
-    height: 50%;
+    height: 43%;
     width: 50%;
     padding: 40px;
     margin-top: 10%;
     float: right;
     margin-right: 10%;
-    border: 2px solid lightgrey;
+    background:#494949;
+    zborder: 2px solid lightgrey;
 }
 
 img{
@@ -105,10 +107,11 @@ img{
     padding: 10px;
     float: right;
     text-align: center;
-    margin-right: 25%;
+    margin-right: 22%;
     width: 25%;
     display: inline-block;
-    border: 2px solid lightgrey;
+    zborder: 2px solid lightgrey;
+    margin-top: 2px;
 }
 
 .choice-app{
@@ -151,7 +154,7 @@ img{
     background-size: contain;
     display: flex;
     justify-content: center;
-    margin-top:2%;
+    margin-top: 10%;
     margin-left: 10%;
 }
 .content_1, .content_2, .content_3, .content_4, .content_5, .content_6{
@@ -161,7 +164,32 @@ img{
     float: left;
     margin-left: 5px;
     margin-bottom: 20px;
-    
+}
+
+p span{
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}  
+
+#valider{
+    float: left;
+    background: #494949;
+    height: 40px;
+    width: 200px;
+    margin-left: 8%;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div span{
+    margin-left: 9px;
+    margin-top: 4px;
+    color: white;
+}
+.text{
+    text-align: justify;
+    font-size: 18px;
 }
 
 .rotate, .rotate45, .rotate135{
